@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "847500363357",
+    "firebase_url": "https://vizgrow-4fddf.firebaseio.com",
+    "project_id": "vizgrow-4fddf",
+    "storage_bucket": "vizgrow-4fddf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847500363357:android:8a16e00d33e3f126546fb4",
+        "android_client_info": {
+          "package_name": "com.example.vizgrow_consulting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847500363357-fg0nulqpe78odrpauhpjt3igej69f5rt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vizgrow_consulting",
+            "certificate_hash": "3cc1b2179ddc5d6c608fb6794ca0c8ab495ff1b9"
+          }
+        },
+        {
+          "client_id": "847500363357-i9vp84k0bofrcihg4g1v8g32qu647ume.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpEfZQFJCf2d__ycXKUeJbfhq7pe7_xI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847500363357-i9vp84k0bofrcihg4g1v8g32qu647ume.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
