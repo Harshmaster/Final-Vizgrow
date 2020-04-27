@@ -16,7 +16,7 @@ class CovidIntroduction extends StatelessWidget {
                 width: double.infinity,
                 child: ClipRRect(
                   child: Image.asset(
-                    "assets/images/overview/nurturing.PNG",
+                    "assets/images/nurturing.PNG",
                     fit: BoxFit.cover,
                   ),
                 ),

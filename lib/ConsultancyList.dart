@@ -34,7 +34,7 @@ List<StartupModel> consultancyList = [
     tagLine: "PROJECT MANAGEMENT",
     description:
         'Project management is important because it ensures there\'s rigor in architecting projects properly so that they fit well within the broader context of the organisation’s strategic frameworks. Good project management ensures that the goals of projects closely align with the strategic goals of the business.',
-    isLeft: false,
+    isLeft: true,
   ),
   StartupModel(
     imgLink: "assets/images/prodesign.PNG",
@@ -48,6 +48,6 @@ List<StartupModel> consultancyList = [
     tagLine: "CUSTOMER EXPERIENCE",
     description:
         'Customers must be treated as invited guests to a party, and we are the hosts. It’s our job every day to make every important aspect of the customer experience a little bit better. Customer will forget what you said or what you did, but will never forget how you made them feel.',
-    isLeft: false,
+    isLeft: true,
   ),
 ];

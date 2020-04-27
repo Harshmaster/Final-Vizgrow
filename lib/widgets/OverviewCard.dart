@@ -16,7 +16,7 @@ class OverviewCard extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(width: 2),
+        // border: Border.all(width: 2),
         color: Colors.white,
       ),
       width: MediaQuery.of(context).size.width,

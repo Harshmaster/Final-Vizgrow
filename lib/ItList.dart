@@ -34,7 +34,7 @@ List<StartupModel> itList = [
     tagLine: "BIG DATA",
     description:
         'We can draw several data analytics, information processing models, which can empower management and operation team with accurate and timely information for taking prompt and correct business decision to drive objective functional activities.',
-    isLeft: false,
+    isLeft: true,
   ),
   StartupModel(
     imgLink: "assets/images/erp.PNG",
@@ -48,6 +48,6 @@ List<StartupModel> itList = [
     tagLine: "CUSTOM APP DEVELOPMENT",
     description:
         '',
-    isLeft: false,
+    isLeft: true,
   ),
 ];

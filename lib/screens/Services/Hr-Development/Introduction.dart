@@ -21,7 +21,7 @@ class HRIntroduction extends StatelessWidget {
                     Container(
                       child: ClipRRect(
                         child:
-                            Image.asset("assets/images/overview/nurturing.PNG"),
+                            Image.asset("assets/images/nurturing.PNG"),
                       ),
                     ),
                     Positioned(

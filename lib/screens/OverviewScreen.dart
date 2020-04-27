@@ -11,7 +11,7 @@ class _OverviewState extends State<Overview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF5E6E8),
+      // backgroundColor: Color(0xffF5E6E8),
       body: ListView(
         children: overviewList.map((variable) {
           return OverviewCard(
