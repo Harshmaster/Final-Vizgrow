@@ -2,31 +2,25 @@ import 'package:vizgrow_consulting/models/overviewModel.dart';
 
 List<StartupModel> hRList = [
   StartupModel(
-    imgLink: "assets/images/overview/nurturing.PNG",
-    tagLine: "COVID-19 SOLUTIONS",
+    imgLink: "assets/images/jobseekers.PNG",
+    tagLine: "SERVICES TO JOB SEEKERS",
     description:
-        'lHelp to decide most suitable form of entity and assisting in obtaining required registrations under Partnership Act, LLP Act, Companies Act, Income Tax, GST, Labour laws, Trade Marks Act etc. ',
+        'During these testing times of employment, we have made it an integral part of our activities to help people find suitable job for them and to fulfil their aspirations. ',
     isLeft: true,
   ), 
   StartupModel(
-    imgLink: "assets/images/overview/nurturing.PNG",
-    tagLine: "COVID-19 SOLUTIONS",
+    imgLink: "assets/images/recruit.PNG",
+    tagLine: "RECRUITMENT SERVICES",
     description:
-        'Help to decide most suitable form of entity and assisting in obtaining required registrations under Partnership Act, LLP Act, Companies Act, Income Tax, GST, Labour laws, Trade Marks Act etc. ',
+        'Only an effective team can ensure success of any organisation. We at Vizgrow help organisations to recruit right person for the right job, who can be an asset to it and work towards meeting its goals.',
     isLeft: false,
   ),
   StartupModel(
-    imgLink: "assets/images/overview/nurturing.PNG",
-    tagLine: "COVID-19 SOLUTIONS",
+    imgLink: "assets/images/hrmanage.PNG",
+    tagLine: "HR MANAGEMENT SERVICES",
     description:
-        'Help to decide most suitable form of entity and assisting in obtaining required registrations under Partnership Act, LLP Act, Companies Act, Income Tax, GST, Labour laws, Trade Marks Act etc. ',
+        'HR manages most important resource of an organisation. HR activities precedes anything and we help organisations to adopt and practice healthy, most acceptable and cost effective HR management policies and practices. ',
     isLeft: true,
   ),
-  StartupModel(
-    imgLink: "assets/images/overview/nurturing.PNG",
-    tagLine: "COVID-19 SOLUTIONS",
-    description:
-        'Help to decide most suitable form of entity and assisting in obtaining required registrations under Partnership Act, LLP Act, Companies Act, Income Tax, GST, Labour laws, Trade Marks Act etc. ',
-    isLeft: false,
-  ),
+  
 ];

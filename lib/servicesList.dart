@@ -7,7 +7,7 @@ import 'package:vizgrow_consulting/screens/Services/Startup&BpoSolutions/Introdu
 
 List<ServiceModel> servicesList = [
   ServiceModel(
-    imgLink: "assets/images/nurturing.PNG",
+    imgLink: "assets/images/covid.PNG",
     tagLine: "COVID-19 SOLUTIONS",
     navigator: CovidIntroduction(),
   ),
