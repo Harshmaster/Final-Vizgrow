@@ -57,7 +57,7 @@ class _OverviewState extends State<Overview> {
             style: TextStyle(
               fontSize: 25,
               fontFamily: 'Montserrat',
-              color: Colors.blue,
+              color: Color(0xff00CED1),
               fontWeight: FontWeight.w900,
             ),
           ),
@@ -131,15 +131,15 @@ class _OverviewState extends State<Overview> {
                     children: [
                       Container(
                         child: Image.asset(
-                          'assets/images/OverviewScreen.png',
+                          'assets/VMV.jpg',
                           fit: BoxFit.cover,
                         ),
                         // color: Colors.amber,
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.8,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height * 0.4,
                       ),
                       Container(
-                        height: MediaQuery.of(context).size.width + 70,
+                        height: MediaQuery.of(context).size.width * 1.5,
                         child: Stack(
                           children: <Widget>[
                             Transform.rotate(
@@ -170,12 +170,13 @@ class _OverviewState extends State<Overview> {
                                   padding: EdgeInsets.only(bottom: 20),
                                   child: Container(
                                     margin: EdgeInsets.only(
-                                        left: 10,
-                                        right: 10,
-                                        top: 20,
-                                        bottom: 20),
-                                    height: MediaQuery.of(context).size.width *
-                                        0.679,
+                                      left: 10,
+                                      right: 10,
+                                      top: 20,
+                                      bottom: 20,
+                                    ),
+                                    height:
+                                        MediaQuery.of(context).size.width * 0.9,
                                     width: MediaQuery.of(context).size.width,
                                     child: Carousel(
                                       boxFit: BoxFit.cover,
@@ -281,9 +282,6 @@ class _OverviewState extends State<Overview> {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 30,
-                      )
                     ],
                   ),
                 ),

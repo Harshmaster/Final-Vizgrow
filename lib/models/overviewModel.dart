@@ -11,7 +11,8 @@ class ServiceModel{
   String imgLink;
   String tagLine;
   Widget navigator;
- ServiceModel({this.imgLink,this.tagLine,this.navigator});
+  int index;
+ ServiceModel({this.imgLink,this.tagLine,this.navigator,this.index});
 }
 
 class StartupModel{

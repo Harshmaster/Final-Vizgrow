@@ -20,7 +20,9 @@ class _ConsultingFormState extends State<ConsultingForm> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
                     child: Icon(
                       Icons.arrow_back,
                       color: Colors.black,
