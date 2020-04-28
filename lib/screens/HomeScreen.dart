@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'OverviewScreenTabBar.dart';
+import 'package:vizgrow_consulting/screens/OverviewScreen.dart';
 
 class HomeScreen extends StatelessWidget {
       navigateScreen(context) {
       Future.delayed(const Duration(milliseconds: 1000), () {
-        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => OverallTabBar()));
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Overview()));
       });
     }
 
