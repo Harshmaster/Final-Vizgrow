@@ -47,7 +47,7 @@ List<StartupModel> itList = [
     imgLink: "assets/images/bigdata.PNG",
     tagLine: "CUSTOM APP DEVELOPMENT",
     description:
-        '',
+        'Tailor made application development is must to suit to an organisation',
     isLeft: true,
   ),
 ];

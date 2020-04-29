@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vizgrow_consulting/widgets/Generalcard.dart';
+import 'package:vizgrow_consulting/widgets/OverviewCard.dart';
 
 import '../../../ConsultancyList.dart';
-import '../../../ItList.dart';
 
 class ConsultancyIntroduction extends StatelessWidget {
   @override
@@ -79,21 +79,14 @@ class ConsultancyIntroduction extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
+                    child: Column(
                       children: consultancyList.map((variable) {
                         return Container(
-                          margin: EdgeInsets.only(
-                            right: 7,
-                            left: 7,
-                            bottom: 10,
-                            top: 10,
-                          ),
-                          child: GeneralCard(
+                          margin: EdgeInsets.only(),
+                          child: OverviewCard(
                             imgLink: variable.imgLink,
                             description: variable.description,
                             tagLine: variable.tagLine,
-                            isLeft: variable.isLeft,
                           ),
                         );
                       }).toList(),

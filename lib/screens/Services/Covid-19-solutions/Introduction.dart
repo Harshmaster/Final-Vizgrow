@@ -67,91 +67,111 @@ class CovidIntroduction extends StatelessWidget {
                     )),
               ),
               Container(
-                padding: EdgeInsets.all(7),
-                margin: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.all(20),
+                margin: EdgeInsets.only(top: 0),
                 child: Text(
                     'Catastrophic disruption has occurred to businesses due to pan India lockdown on account of COVID-19. As a responsible corporate citizen, we have geared our organisation to support industry and businesses to save and protect them and making them sustain and grow with new challenges resulting from the pandemic.',
                     style: TextStyle(
-                      fontFamily: "Montserrat",
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    )),
+                        fontFamily: "Montserrat",
+                        fontSize: 17,
+                        color: Colors.grey)),
               ),
               Container(
-                padding: EdgeInsets.all(7),
-                margin: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                  bottom: 20,
+                ),
+                margin: EdgeInsets.only(top: 0),
                 child: Text(
                   'Let us know what you need to bring life and speed to your business i.e. Man, material, services, finance or support.',
                   style: TextStyle(
-                    fontFamily: "Montserrat",
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontFamily: "Montserrat",
+                      fontSize: 17,
+                      color: Colors.grey),
                 ),
               ),
-              Container(
-                margin:
-                    EdgeInsets.only(right: 20, left: 20, top: 15, bottom: 10),
-                child: InkWell(
-                  child: Container(
-                    child: Center(
-                      child: Text(
-                        'I am in Need',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 23,
-                          color: Colors.white,
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                margin: EdgeInsets.only(right: 22, left: 22, top: 6, bottom: 0),
+                child: Container(
+                  child: InkWell(
+                    child: Container(
+                      child: Center(
+                        child: Text(
+                          'I am in Need',
+                          style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 23,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          gradient: LinearGradient(
+                            colors: [Color(0xff00CED1), Colors.blueGrey[500]],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          )),
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.width * 0.14,
                     ),
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.width * 0.14,
-                    color: Colors.black,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => NeedForm()));
+                    },
                   ),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => NeedForm()));
-                  },
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(7),
-                margin: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.all(20),
+                margin: EdgeInsets.only(top: 0, bottom: 0),
                 child: Text(
                     'Let us know what you need to bring life and speed to your business i.e. Man, material, services, finance or support.',
                     style: TextStyle(
-                      fontFamily: "Montserrat",
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    )),
+                        fontFamily: "Montserrat",
+                        fontSize: 17,
+                        color: Colors.grey)),
               ),
-              Container(
+              Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
                 margin:
-                    EdgeInsets.only(right: 20, left: 20, top: 15, bottom: 30),
-                child: InkWell(
-                  child: Container(
-                    child: Center(
-                      child: Text(
-                        'I Can Provide',
-                        style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontSize: 23,
-                          color: Colors.white,
+                    EdgeInsets.only(right: 22, left: 22, top: 6, bottom: 20),
+                child: Container(
+                  child: InkWell(
+                    child: Container(
+                        child: Center(
+                          child: Text(
+                            'I Can Provide',
+                            style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              fontSize: 23,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.width * 0.14,
-                    color: Colors.black,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.width * 0.14,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            gradient: LinearGradient(
+                              colors: [Color(0xff00CED1), Colors.blueGrey[500]],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ))),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  ProvideForm()));
+                    },
                   ),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => ProvideForm()));
-                  },
                 ),
               ),
             ],

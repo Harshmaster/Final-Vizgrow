@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vizgrow_consulting/HRList.dart';
 import 'package:vizgrow_consulting/widgets/Generalcard.dart';
+import 'package:vizgrow_consulting/widgets/OverviewCard.dart';
 
 class HRIntroduction extends StatelessWidget {
   @override
@@ -74,24 +75,17 @@ class HRIntroduction extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                   ),
                 ),
-                Container(
+               Container(
                   width: MediaQuery.of(context).size.width,
                   child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
+                    child: Column(
                       children: hRList.map((variable) {
                         return Container(
-                          margin: EdgeInsets.only(
-                            right: 7,
-                            left: 7,
-                            bottom: 10,
-                            top: 10,
-                          ),
-                          child: GeneralCard(
+                          margin: EdgeInsets.only(),
+                          child: OverviewCard(
                             imgLink: variable.imgLink,
                             description: variable.description,
                             tagLine: variable.tagLine,
-                            isLeft: variable.isLeft,
                           ),
                         );
                       }).toList(),

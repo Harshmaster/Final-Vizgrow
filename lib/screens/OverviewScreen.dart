@@ -1,9 +1,8 @@
-import 'dart:math';
 
-import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:vizgrow_consulting/screens/Career/Introduction.dart';
 import 'package:vizgrow_consulting/screens/ContactUs/Introduction.dart';
+import 'package:vizgrow_consulting/widgets/OverviewCard.dart';
 import '../overviewlist.dart';
 import 'ConsultancyPartner/Introduction.dart';
 import 'Services/ServicesScreen.dart';
@@ -14,21 +13,6 @@ class Overview extends StatefulWidget {
 }
 
 class _OverviewState extends State<Overview> {
-  int i = 0;
-
-  rotateImage(int a, int b) {
-    if (a < b) {
-      setState(() {
-        i++;
-      });
-    } else {
-      setState(() {
-        i--;
-      });
-    }
-    print(b);
-  }
-
   int _currentIndex = 0;
 
   List<Widget> widgetList = [
@@ -49,11 +33,14 @@ class _OverviewState extends State<Overview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomPadding: true,
+
+        //  backgroundColor: Colors.grey[200],
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
           title: Text(
-            'VizGrow',
+            'vizGrow',
             style: TextStyle(
               fontSize: 25,
               fontFamily: 'Montserrat',
@@ -63,7 +50,15 @@ class _OverviewState extends State<Overview> {
           ),
           actions: <Widget>[
             Container(
-              margin: EdgeInsets.only(right: 10),
+              height: double.infinity,
+              child: Center(
+                  child: Text(
+                'Login',
+                style: TextStyle(color: Colors.black),
+              )),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 12, left: 6),
               child: InkWell(
                 child: Icon(
                   Icons.person,
@@ -71,10 +66,21 @@ class _OverviewState extends State<Overview> {
                   size: 30,
                 ),
               ),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 14),
+              child: Icon(
+                Icons.phone,
+                color: Colors.black,
+              ),
             )
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
+          elevation: 5,
+          iconSize: 21,
+          selectedFontSize: 14,
+          unselectedFontSize: 13,
           onTap: onTabChanged,
           currentIndex: _currentIndex,
           type: BottomNavigationBarType.fixed,
@@ -92,17 +98,17 @@ class _OverviewState extends State<Overview> {
               title: Text(
                 "Services",
                 style: TextStyle(
-                    fontFamily: 'Montserrat', fontWeight: FontWeight.w500),
-              ),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.people),
-              title: Text(
-                "Consultancy Partner",
-                style: TextStyle(
                     fontFamily: 'Montserrat', fontWeight: FontWeight.w600),
               ),
             ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.people),
+                title: Column(
+                  children: <Widget>[
+                    Text('Consultancy'),
+                    Text('Partner'),
+                  ],
+                )),
             BottomNavigationBarItem(
               icon: Icon(Icons.work),
               title: Text(
@@ -114,7 +120,7 @@ class _OverviewState extends State<Overview> {
             BottomNavigationBarItem(
               icon: Icon(Icons.contact_phone),
               title: Text(
-                "Contact Us",
+                "Contact",
                 style: TextStyle(
                     fontFamily: 'Montserrat', fontWeight: FontWeight.w600),
               ),
@@ -139,148 +145,14 @@ class _OverviewState extends State<Overview> {
                         height: MediaQuery.of(context).size.height * 0.4,
                       ),
                       Container(
-                        height: MediaQuery.of(context).size.width * 1.5,
-                        child: Stack(
-                          children: <Widget>[
-                            Transform.rotate(
-                              angle: i * pi / 2,
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                  left: 30,
-                                  right: 30,
-                                  top: 0,
-                                ),
-                                width: double.infinity,
-                                height:
-                                    MediaQuery.of(context).size.width * 0.89,
-                                child: Image.asset(
-                                  'assets/images/no_vizgrow.jpg',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              top: MediaQuery.of(context).size.width * 0.299,
-                              right: 0,
-                              left: 0,
-                              child: Card(
-                                elevation: 6,
-                                margin: EdgeInsets.only(left: 20, right: 20),
-                                child: Padding(
-                                  padding: EdgeInsets.only(bottom: 20),
-                                  child: Container(
-                                    margin: EdgeInsets.only(
-                                      left: 10,
-                                      right: 10,
-                                      top: 20,
-                                      bottom: 20,
-                                    ),
-                                    height:
-                                        MediaQuery.of(context).size.width * 0.9,
-                                    width: MediaQuery.of(context).size.width,
-                                    child: Carousel(
-                                      boxFit: BoxFit.cover,
-                                      autoplay: false,
-                                      animationCurve: Curves.easeIn,
-                                      dotColor: Color(0xff183883),
-                                      animationDuration:
-                                          Duration(milliseconds: 0),
-                                      dotSize: 5.0,
-                                      dotIncreaseSize: 1.1,
-                                      dotIncreasedColor: Colors.yellow,
-                                      dotBgColor: Colors.transparent,
-                                      dotPosition: DotPosition.bottomCenter,
-                                      dotVerticalPadding: 0.0,
-                                      showIndicator: true,
-                                      onImageChange: (a, b) {
-                                        print(a);
-                                        print(b);
-                                        rotateImage(a, b);
-                                      },
-                                      indicatorBgPadding: 0.0,
-                                      images: overviewList.map((variable) {
-                                        return Column(
-                                          children: <Widget>[
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: <Widget>[
-                                                Container(
-                                                  margin: EdgeInsets.only(
-                                                      right: 15),
-                                                  width: 80,
-                                                  height: 80,
-                                                  child: Image.asset(
-                                                    variable.imgLink,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: <Widget>[
-                                                Container(
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width -
-                                                      20 -
-                                                      40,
-                                                  // margin: EdgeInsets.only(left: 95),
-                                                  child: Text(
-                                                    variable.tagLine,
-                                                    style: TextStyle(
-                                                      fontSize: 17,
-                                                      fontFamily: "Montserrat",
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Row(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: <Widget>[
-                                                // Container(
-                                                //   margin: EdgeInsets.only(right: 15),
-                                                //   width: 80,
-                                                //   height: 80,
-                                                //   child: Image.asset(
-                                                //     variable.imgLink,
-                                                //     fit: BoxFit.cover,
-                                                //   ),
-                                                // ),
-                                                Expanded(
-                                                  child: Container(
-                                                    child: Text(
-                                                      variable.description,
-                                                      style: TextStyle(
-                                                        color: Colors.black45,
-                                                        fontFamily:
-                                                            "Montserrat",
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        );
-                                      }).toList(),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        child: Column(
+                            children: overviewList.map((value) {
+                          return OverviewCard(
+                            description: value.description,
+                            imgLink: value.imgLink,
+                            tagLine: value.tagLine,
+                          );
+                        }).toList()),
                       ),
                     ],
                   ),

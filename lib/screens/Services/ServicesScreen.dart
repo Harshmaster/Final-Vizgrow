@@ -14,57 +14,66 @@ class _ServicesState extends State<Services> {
     Image.asset("assets/ServicesIcons/StartupBPO.png"),
     Image.asset("assets/ServicesIcons/HRservices.png"),
     Image.asset("assets/ServicesIcons/ITservices.png"),
-    Image.asset("assets/ServicesIcons/consultancy.png"),
+    Image.asset("assets/ServicesIcons/consult.png"),
+    Image.asset("assets/ServicesIcons/investinindia.png"),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color(0xffF5E6E8),
+      backgroundColor: Colors.grey[100], 
       body: SingleChildScrollView(
         child: Container(
           child: Column(
             children: <Widget>[
               Container(
-                height: MediaQuery.of(context).size.width * 0.6,
-                margin: EdgeInsets.only(left: 0, right: 0, top: 0),
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                height: MediaQuery.of(context).size.width * 0.48,
+                margin: EdgeInsets.only(left: 10, right: 10, top: 0),
                 width: MediaQuery.of(context).size.width,
-                child: Carousel(
-                  autoplayDuration: Duration(milliseconds: 1900),
-                  boxFit: BoxFit.cover,
-                  autoplay: true,
-                  animationCurve: Curves.easeInOut,
-                  dotColor: Color(0xff183883).withOpacity(0.5),
-                  animationDuration: Duration(milliseconds: 1600),
-                  dotSize: 7.0,
-                  dotIncreaseSize: 1.1,
-                  dotIncreasedColor: Color(0xff00CED1),
-                  dotBgColor: Colors.white,
-                  dotPosition: DotPosition.bottomCenter,
-                  dotVerticalPadding: 0.0,
-                  showIndicator: true,
-                  onImageChange: (a, b) {},
-                  indicatorBgPadding: 10.0,
-                  images: servicesList.map((variable) {
-                    return Container(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset(
-                        variable.imgLink,
-                        fit: BoxFit.cover,
-                      ),
-                    );
-                  }).toList(),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Carousel(
+                    autoplayDuration: Duration(milliseconds: 5000),
+                    boxFit: BoxFit.cover,
+                    autoplay: true,
+                    animationCurve: Curves.easeInOut,
+                    dotColor: Color(0xff183883).withOpacity(0.5),
+                    animationDuration: Duration(milliseconds: 3000),
+                    dotSize: 7.0,
+                    dotIncreaseSize: 1.1,
+                    dotIncreasedColor: Color(0xff00CED1),
+                    dotBgColor: Colors.white,
+                    dotPosition: DotPosition.bottomCenter,
+                    dotVerticalPadding: 0.0,
+                    showIndicator: false,
+                    onImageChange: (a, b) {},
+                    indicatorBgPadding: 10.0,
+                    images: servicesList.map((variable) {
+                      return Container(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset(
+                          variable.imgLink,
+                          fit: BoxFit.cover,
+                        ),
+                      );
+                    }).toList(),
+                  ),
                 ),
               ),
               Container(
+                margin: EdgeInsets.only(top: 20),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.width * 1.1,
+                height: MediaQuery.of(context).size.width * 0.8,
                 child: GridView(
                   scrollDirection: Axis.vertical,
                   padding: const EdgeInsets.all(10),
                   children: servicesList.map((catData) {
                     return Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(13)),
                       width: 50,
                       height: 50,
                       child: InkWell(
@@ -76,18 +85,21 @@ class _ServicesState extends State<Services> {
                                       catData.navigator));
                         },
                         child: Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(13)),
                           elevation: 6,
                           margin: EdgeInsets.all(0),
                           child: Column(
                             children: <Widget>[
                               Container(
-                                margin: EdgeInsets.only(top: 20),
-                                width: 50,
-                                height: 50,
+                                margin: EdgeInsets.only(top: 12),
+                                width: 40,
+                                height: 40,
                                 child: imageList[catData.index],
                               ),
                               Container(
-                                margin: EdgeInsets.only(top: 20),
+                                margin: EdgeInsets.only(
+                                    top: 15, left: 10, right: 10, bottom: 10),
                                 child: Text(
                                   catData.tagLine,
                                   style: TextStyle(
@@ -101,9 +113,9 @@ class _ServicesState extends State<Services> {
                     );
                   }).toList(),
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200,
-                    childAspectRatio: 1.2,
-                    crossAxisSpacing: 20,
+                    maxCrossAxisExtent: 160,
+                    childAspectRatio: 1,
+                    crossAxisSpacing: 30,
                     mainAxisSpacing: 20,
                   ),
                 ),

@@ -37,4 +37,11 @@ List<ServiceModel> servicesList = [
     navigator: ConsultancyIntroduction(),
     index: 4,
   ),
+    ServiceModel(
+    imgLink: "assets/images/covid.PNG",
+    tagLine: "Invest in India",
+    navigator: CovidIntroduction(),
+    index: 5,
+
+  ),
 ];
