@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:vizgrow_consulting/screens/Career/Introduction.dart';
 import 'package:vizgrow_consulting/screens/ContactUs/Introduction.dart';
@@ -90,7 +89,9 @@ class _OverviewState extends State<Overview> {
               title: Text(
                 "Overview",
                 style: TextStyle(
-                    fontFamily: 'Montserrat', fontWeight: FontWeight.w600),
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 13),
               ),
             ),
             BottomNavigationBarItem(
@@ -105,8 +106,14 @@ class _OverviewState extends State<Overview> {
                 icon: Icon(Icons.people),
                 title: Column(
                   children: <Widget>[
-                    Text('Consultancy'),
-                    Text('Partner'),
+                    Text(
+                      'Consulting',
+                      style: TextStyle(fontSize: 13),
+                    ),
+                    Text(
+                      'Partner',
+                      style: TextStyle(fontSize: 13),
+                    ),
                   ],
                 )),
             BottomNavigationBarItem(
@@ -114,7 +121,9 @@ class _OverviewState extends State<Overview> {
               title: Text(
                 "Career",
                 style: TextStyle(
-                    fontFamily: 'Montserrat', fontWeight: FontWeight.w600),
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13),
               ),
             ),
             BottomNavigationBarItem(
@@ -122,7 +131,9 @@ class _OverviewState extends State<Overview> {
               title: Text(
                 "Contact",
                 style: TextStyle(
-                    fontFamily: 'Montserrat', fontWeight: FontWeight.w600),
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13),
               ),
             ),
           ],

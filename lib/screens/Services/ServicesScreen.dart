@@ -21,7 +21,7 @@ class _ServicesState extends State<Services> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100], 
+      backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -29,7 +29,7 @@ class _ServicesState extends State<Services> {
               Container(
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                height: MediaQuery.of(context).size.width * 0.48,
+                height: MediaQuery.of(context).size.height * 0.3,
                 margin: EdgeInsets.only(left: 10, right: 10, top: 0),
                 width: MediaQuery.of(context).size.width,
                 child: ClipRRect(
@@ -66,9 +66,9 @@ class _ServicesState extends State<Services> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.5,
                 child: GridView(
-                  scrollDirection: Axis.vertical,
+                  
                   padding: const EdgeInsets.all(10),
                   children: servicesList.map((catData) {
                     return Container(
@@ -91,21 +91,36 @@ class _ServicesState extends State<Services> {
                           margin: EdgeInsets.all(0),
                           child: Column(
                             children: <Widget>[
+                              Expanded(
+                                child: SizedBox(
+                                  height: 0,
+                                ),
+                              ),
                               Container(
                                 margin: EdgeInsets.only(top: 12),
                                 width: 40,
                                 height: 40,
                                 child: imageList[catData.index],
                               ),
+                              Expanded(
+                                child: SizedBox(
+                                  height: 0,
+                                ),
+                              ),
                               Container(
                                 margin: EdgeInsets.only(
-                                    top: 15, left: 10, right: 10, bottom: 10),
+                                    top: 0, left: 10, right: 10, bottom: 10),
                                 child: Text(
                                   catData.tagLine,
                                   style: TextStyle(
                                       fontFamily: "Montserrat", fontSize: 11),
                                 ),
-                              )
+                              ),
+                              Expanded(
+                                child: SizedBox(
+                                  height: 0,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -113,9 +128,9 @@ class _ServicesState extends State<Services> {
                     );
                   }).toList(),
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 160,
-                    childAspectRatio: 1,
-                    crossAxisSpacing: 30,
+                    maxCrossAxisExtent: 120,
+                    childAspectRatio: 0.74,
+                    crossAxisSpacing: 20,
                     mainAxisSpacing: 20,
                   ),
                 ),
