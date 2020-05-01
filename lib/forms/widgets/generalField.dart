@@ -1,11 +1,21 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class GeneralField extends StatelessWidget {
   final String label;
   final String hint;
+  final TextInputType type;
+  final int maxLines;
+  final int maxLength;
+  final bool isEnabled;
 
-  GeneralField({this.label = "none", this.hint});
+  GeneralField(
+      {this.label = "none",
+      this.hint,
+      this.type = TextInputType.text,
+      this.maxLines = 1,
+      this.maxLength,this.isEnabled = true});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,36 +31,43 @@ class GeneralField extends StatelessWidget {
             label,
             style: TextStyle(
               color: Colors.black,
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
         Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40), color: Colors.amber),
+            borderRadius: BorderRadius.circular(40),
+          ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: TextField(
+              enabled: isEnabled,
+              maxLengthEnforced: true,
+              maxLength: maxLength,
+              maxLines: maxLines,
+              minLines: 1,
               cursorColor: Colors.black,
               cursorWidth: 1,
               dragStartBehavior: DragStartBehavior.start,
               decoration: InputDecoration(
-                  fillColor: Colors.grey[100],
-                  filled: true,
-                  labelStyle: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  enabledBorder: InputBorder.none,
-                  focusedBorder: InputBorder.none,
-                  alignLabelWithHint: true,
-                  hintStyle: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 17,
-                  ),
-                  hintText: hint),
+                fillColor: Colors.grey[100],
+                filled: true,
+                labelStyle: TextStyle(
+                  color: Colors.black,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700,
+                ),
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                hintStyle: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 17,
+                ),
+                hintText: hint,
+              ),
+              keyboardType: type,
             ),
           ),
         ),

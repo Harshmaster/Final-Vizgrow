@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class Dropdown extends StatefulWidget {
   final List<String> itemList;
   final String hint;
+  final double leftMargin;
 
-  Dropdown({this.itemList, this.hint});
+  Dropdown({this.itemList, this.hint,this.leftMargin});
 
   @override
   _DropdownState createState() => _DropdownState();
@@ -19,7 +20,7 @@ class _DropdownState extends State<Dropdown> {
       padding: EdgeInsets.only(left:10),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.grey[200]),
       margin: EdgeInsets.only(
-        left: 30,
+        left: widget.leftMargin,
         right: 30,
         top: 20,
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vizgrow_consulting/widgets/Generalcard.dart';
 import 'package:vizgrow_consulting/widgets/OverviewCard.dart';
 
 import '../../../ConsultancyList.dart';

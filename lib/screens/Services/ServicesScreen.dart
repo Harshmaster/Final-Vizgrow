@@ -29,7 +29,7 @@ class _ServicesState extends State<Services> {
               Container(
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                height: MediaQuery.of(context).size.height * 0.3,
+                height: MediaQuery.of(context).size.height * 0.29, 
                 margin: EdgeInsets.only(left: 10, right: 10, top: 0),
                 width: MediaQuery.of(context).size.width,
                 child: ClipRRect(
@@ -64,7 +64,7 @@ class _ServicesState extends State<Services> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 20),
+                margin: EdgeInsets.only(top: 0),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.5,
                 child: GridView(

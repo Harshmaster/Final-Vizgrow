@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vizgrow_consulting/HRList.dart';
-import 'package:vizgrow_consulting/widgets/Generalcard.dart';
 import 'package:vizgrow_consulting/widgets/OverviewCard.dart';
 
 class HRIntroduction extends StatelessWidget {
@@ -86,6 +85,7 @@ class HRIntroduction extends StatelessWidget {
                             imgLink: variable.imgLink,
                             description: variable.description,
                             tagLine: variable.tagLine,
+                            navigator: variable.navigator,
                           ),
                         );
                       }).toList(),
