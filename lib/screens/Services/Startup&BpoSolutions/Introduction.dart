@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vizgrow_consulting/StartupList.dart';
+import 'package:vizgrow_consulting/screens/login/login_one.dart';
 import 'package:vizgrow_consulting/widgets/OverviewCard.dart';
 
 class StartupIntroduction extends StatelessWidget {
@@ -31,6 +32,9 @@ class StartupIntroduction extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(right: 10),
             child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LoginPagePrimary()));
+              },
               child: Icon(
                 Icons.person,
                 color: Colors.black,
@@ -52,7 +56,7 @@ class StartupIntroduction extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       child: ClipRRect(
-                        child: Image.asset("assets/images/business.jpg"),
+                        child: Image.asset("assets/ServiceImages/startup.PNG"),
                       ),
                     ),
                     // Positioned(

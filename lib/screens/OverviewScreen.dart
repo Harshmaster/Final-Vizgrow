@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vizgrow_consulting/screens/Career/Introduction.dart';
 import 'package:vizgrow_consulting/screens/ContactUs/Introduction.dart';
+import 'package:vizgrow_consulting/screens/login/login_one.dart';
 import 'package:vizgrow_consulting/widgets/OverviewCard.dart';
 import '../overviewlist.dart';
 import 'ConsultancyPartner/Introduction.dart';
@@ -59,6 +60,9 @@ class _OverviewState extends State<Overview> {
             Container(
               margin: EdgeInsets.only(right: 12, left: 6),
               child: InkWell(
+                onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LoginPagePrimary()));
+              },
                 child: Icon(
                   Icons.person,
                   color: Colors.black,
@@ -67,7 +71,7 @@ class _OverviewState extends State<Overview> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(right: 14),
+              margin: EdgeInsets.only(right: 14, left: 10),
               child: Icon(
                 Icons.phone,
                 color: Colors.black,

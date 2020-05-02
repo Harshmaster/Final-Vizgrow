@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vizgrow_consulting/forms/screens/needforms.dart';
 import 'package:vizgrow_consulting/forms/screens/provideform.dart';
+import 'package:vizgrow_consulting/screens/login/login_one.dart';
 
 class CovidIntroduction extends StatelessWidget {
   @override
@@ -31,6 +32,9 @@ class CovidIntroduction extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(right: 10),
             child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LoginPagePrimary()));
+              },
               child: Icon(
                 Icons.person,
                 color: Colors.black,

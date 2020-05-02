@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:vizgrow_consulting/HRList.dart';
+import 'package:vizgrow_consulting/investList.dart';
 import 'package:vizgrow_consulting/screens/login/login_one.dart';
 import 'package:vizgrow_consulting/widgets/OverviewCard.dart';
 
-class HRIntroduction extends StatelessWidget {
+class InvestInIndia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +56,7 @@ class HRIntroduction extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       child: ClipRRect(
-                        child: Image.asset("assets/ServiceImages/hr.PNG"),
+                        child: Image.asset("assets/ServiceImages/invest1.PNG"),
                       ),
                     ),
                     // Positioned(
@@ -78,18 +78,20 @@ class HRIntroduction extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                   ),
                 ),
-               Container(
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
                   width: MediaQuery.of(context).size.width,
                   child: SingleChildScrollView(
                     child: Column(
-                      children: hRList.map((variable) {
+                      children: investList.map((variable) {
                         return Container(
                           margin: EdgeInsets.only(),
                           child: OverviewCard(
                             imgLink: variable.imgLink,
                             description: variable.description,
                             tagLine: variable.tagLine,
-                            navigator: variable.navigator,
                           ),
                         );
                       }).toList(),
