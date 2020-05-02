@@ -16,12 +16,13 @@ class GeneralField extends StatelessWidget {
       this.type = TextInputType.text,
       this.maxLines = 1,
       this.maxLength,this.isEnabled = true});
+      
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        left: 30,
-        right: 30,
+        left: 30, 
+        right: 30, 
         top: 20,
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

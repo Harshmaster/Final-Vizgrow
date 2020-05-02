@@ -9,7 +9,8 @@ List<StartupModel> hRList = [
         'During these testing times of employment, we have made it an integral part of our activities to help people find suitable job for them and to fulfil their aspirations. ',
     isLeft: true,
     navigator: JobApplication(),
-  ), 
+  ),
+
   StartupModel(
     imgLink: "assets/images/recruit.PNG",
     tagLine: "RECRUITMENT SERVICES",
@@ -18,6 +19,7 @@ List<StartupModel> hRList = [
     isLeft: false,
     navigator: null,
   ),
+  
   StartupModel(
     imgLink: "assets/images/hrmanage.PNG",
     tagLine: "HR MANAGEMENT SERVICES",

@@ -113,7 +113,7 @@ class _ServicesState extends State<Services> {
                                 child: Text(
                                   catData.tagLine,
                                   style: TextStyle(
-                                      fontFamily: "Montserrat", fontSize: 11),
+                                      fontFamily: "Montserrat", fontSize: 10),
                                 ),
                               ),
                               Expanded(
@@ -129,7 +129,7 @@ class _ServicesState extends State<Services> {
                   }).toList(),
                   gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 120,
-                    childAspectRatio: 0.74,
+                    childAspectRatio: 0.82,
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 20,
                   ),

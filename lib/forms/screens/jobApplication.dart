@@ -1,7 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vizgrow_consulting/forms/widgets/Dropdown.dart';
 import 'package:vizgrow_consulting/forms/widgets/generalField.dart';
+import 'package:intl/intl.dart';
+
 
 class JobApplication extends StatefulWidget {
   @override
@@ -13,8 +16,8 @@ class _JobApplicationState extends State<JobApplication> {
   bool isEmployed = false;
   int skillCount = 0;
   List<int> skillList = [];
-  DateTime _fromDate = DateTime.now();
-  DateTime _toDate = DateTime.now();
+  String _fromDate;
+  String _toDate;
 
   setCountry(value) {
     setState(() {
@@ -25,31 +28,37 @@ class _JobApplicationState extends State<JobApplication> {
   Future<Null> _selectFromDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
       context: context,
-      initialDate: _fromDate,
+      initialDate: DateTime.now(),
       firstDate: DateTime(2010),
       lastDate: DateTime(2030),
     );
 
-    if (picked != null ) {
+    if (picked != null) {
       print('Date Selected: ${picked.toIso8601String()}');
       setState(() {
-        _fromDate = picked;
+        var fromDate = picked;
+        var format = DateFormat.yMd();
+        var dateString = format.format(fromDate);
+        _fromDate = dateString;
       });
     }
   }
 
-    Future<Null> _selectToDate(BuildContext context) async {
+  Future<Null> _selectToDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
       context: context,
-      initialDate: _toDate,
+      initialDate: DateTime.now(),
       firstDate: DateTime(2010),
       lastDate: DateTime(2030),
     );
 
-    if (picked != null ) {
+    if (picked != null) {
       print('Date Selected: ${picked.toIso8601String()}');
       setState(() {
-        _toDate = picked;
+        var toDate = picked;
+        var format = DateFormat.yMd();
+        var dateString = format.format(toDate);
+        _toDate = dateString;
       });
     }
   }
@@ -59,7 +68,7 @@ class _JobApplicationState extends State<JobApplication> {
       width: MediaQuery.of(context).size.width / 2,
       child: GeneralField(
         hint: "eg.sales",
-        label: "Key Skills",
+        label: "",
       ),
     );
   }
@@ -358,6 +367,7 @@ class _JobApplicationState extends State<JobApplication> {
                       onPressed: () {
                         setState(() {
                           skillCount++;
+
                           skillList.add(skillCount);
                         });
                       },
@@ -365,6 +375,8 @@ class _JobApplicationState extends State<JobApplication> {
               ],
             ),
             Wrap(
+              spacing: 0,
+              runSpacing: 0,
               children: skillList.map((variable) {
                 return addSkill();
               }).toList(),
@@ -379,26 +391,28 @@ class _JobApplicationState extends State<JobApplication> {
                     width: MediaQuery.of(context).size.width / 2,
                     child: GeneralField(
                       isEnabled: false,
-                      hint: "eg.January",
+                      hint: _fromDate == null ? "eg.January" : _fromDate,
                       label: "From",
                     ),
                   ),
                 ),
                 InkWell(
-                  onTap: () {
+                  onTap: () async {
                     _selectToDate(context);
+                    
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width / 2,
                     child: GeneralField(
                       isEnabled: false,
-                      hint: "eg.December",
+                      hint: _toDate == null ? "eg.April" : _toDate,
                       label: "To",
                     ),
                   ),
                 ),
               ],
             ),
+            SizedBox(height: 20,)
           ],
         ),
       ),
